@@ -1,0 +1,1 @@
+curl -s https://api.github.com/orgs/raghudevopsb69/repos | grep clone_url | awk -F '":' '{ print $2 }' | sed 's/\"//g' | sed 's/,//' | while read line; do git clone "$line"; done
